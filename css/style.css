@@ -41,7 +41,29 @@ nav a:hover { color: var(--accent); }
 .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(182,130,43,.3); }
 .btn.alt { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
 
-/* === GENEL BAŞLIKLAR VE KARTLAR === */
+/* === MOBİL MENÜ === */
+.menu-toggle { display: none; font-size: 28px; color: var(--accent); cursor: pointer; }
+@media(max-width:768px) {
+  nav ul {
+    display: none; flex-direction: column; position: absolute; top: 70px; right: 10px;
+    background: #fff; border: 1px solid rgba(0,0,0,.1); border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.1); padding: 12px 0; width: 180px; text-align: center; z-index: 100;
+  }
+  nav ul.active { display: flex; }
+  .menu-toggle { display: block; }
+  header .btn { display: none; }
+}
+
+/* === HERO (ANA SAYFA ÜST ALAN) === */
+.hero { padding: 80px 0; text-align: left; }
+.hero h1 { font-size: clamp(26px,4vw,48px); font-weight: 900; margin-bottom: 18px; }
+.hero p { color: var(--muted); font-size: 17px; max-width: 700px; }
+.hero .cta { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; }
+@media(max-width:768px){
+  .hero{ text-align: center; padding: 60px 0; }
+}
+
+/* === BAŞLIKLAR, GRID ve KARTLAR === */
 h1 {
   text-align: center; color: var(--accent-2);
   font-size: clamp(28px, 4vw, 44px); margin-top: 48px;
@@ -61,32 +83,29 @@ p.desc { text-align: center; color: var(--muted); max-width: 700px; margin: 10px
 .card h3 { color: var(--accent-2); margin-bottom: 10px; }
 .card p { color: var(--muted); }
 
-/* === FOOTER === */
-footer {
-  background: #1c1b19; color: #d1d5db; padding: 32px 0; margin-top: 60px;
+/* === İSTATİSTİK DAİRELERİ (index) === */
+.stats { background:#fff; padding:60px 0; }
+.stats-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:30px; justify-items:center; text-align:center;
 }
-footer a { color: #f7f7f7; }
-footer .cols {
-  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px;
+.stat-circle{
+  width:130px; height:130px; border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, #fff 0%, #f7f2e9 60%);
+  border:5px solid var(--accent);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  box-shadow:0 8px 18px rgba(182,130,43,.25);
+  transition:.3s;
 }
-@media(max-width:900px) {
-  footer .cols { grid-template-columns: 1fr; }
-}
-
-/* === MOBİL MENÜ === */
-.menu-toggle { display: none; font-size: 28px; color: var(--accent); cursor: pointer; }
-@media(max-width:768px) {
-  nav ul {
-    display: none; flex-direction: column; position: absolute; top: 70px; right: 10px;
-    background: #fff; border: 1px solid rgba(0,0,0,.1); border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(0,0,0,.1); padding: 12px 0; width: 180px; text-align: center; z-index: 100;
-  }
-  nav ul.active { display: flex; }
-  .menu-toggle { display: block; }
-  .btn { display: none; }
+.stat-circle:hover{ transform:scale(1.05); }
+.stat-number{ color:var(--accent-2); font-size:28px; font-weight:900; }
+.stat-label{ color:var(--muted); font-weight:600; font-size:13px; margin-top:4px; }
+@media(min-width:1024px){
+  .stat-circle{ width:140px; height:140px; }
+  .stat-number{ font-size:32px; }
 }
 
-/* === FORM === */
+/* === FORM GENEL === */
 form {
   background: #fff; border-radius: 16px; padding: 32px;
   box-shadow: 0 3px 10px rgba(0,0,0,.05); max-width: 600px; margin: 0 auto;
@@ -103,3 +122,15 @@ button[type=submit] {
   font-weight: 700; cursor: pointer; transition: .2s;
 }
 button[type=submit]:hover { background: var(--accent-2); }
+
+/* === FOOTER === */
+footer {
+  background: #1c1b19; color: #d1d5db; padding: 32px 0; margin-top: 60px;
+}
+footer a { color: #f7f7f7; }
+footer .cols {
+  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px;
+}
+@media(max-width:900px) {
+  footer .cols { grid-template-columns: 1fr; }
+}
