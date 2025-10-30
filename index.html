@@ -42,7 +42,7 @@ header nav a:hover{color:var(--gold)}
 .hero{
   height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;
   background:#1b1511 center/cover no-repeat; /* JS bu alanı gerçek görselle değiştirecek */
-  background-size: 85%;   /* % değerini burada değiştirerek küçültüp büyüt */
+  background-size: contain;   /* % değerini burada değiştirerek küçültüp büyüt */
 background-position: center top; /* fotoğrafı yukarı, ortaya veya aşağı hizala */
 
 }
@@ -199,4 +199,5 @@ function toggleMenu(){document.getElementById('navMenu').classList.toggle('activ
 </script>
 </body>
 </html>
+
 
