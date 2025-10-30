@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teklif Al | Ustabaşı Lezzet Ustası</title>
+  <meta name="description" content="Etkinliğinizin detaylarını paylaşın; Ustabaşı Lezzet Ustası olarak size özel toplu yemek ve organizasyon teklifimizi hazırlayalım.">
+  <style>
+    :root{
+      --bg:#fbf7f2;
+      --ink:#1f2937;
+      --accent:#b6822b;
+      --accent-2:#7a5520;
+      --muted:#6b7280;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans";background:var(--bg);color:var(--ink);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1180px,92%);margin:0 auto}
+    header{position:sticky;top:0;background:rgba(251,247,242,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.05);padding:12px 0;z-index:50}
+    nav ul{display:flex;list-style:none;gap:18px;justify-content:flex-end;margin:0;padding:0;font-weight:600}
+    nav a:hover{color:var(--accent)}
+    h1{font-size:clamp(28px,4vw,44px);margin-top:48px;color:var(--accent-2)}
+    form{display:grid;gap:14px;margin-top:32px}
+    input, select, textarea{padding:12px 14px;border-radius:12px;border:1px solid rgba(0,0,0,.12);background:#fff;font:inherit;width:100%}
+    textarea{min-height:120px;resize:vertical}
+    .form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+    button{padding:14px 20px;background:var(--accent);color:#fff;font-weight:700;border:none;border-radius:999px;cursor:pointer;transition:.2s}
+    button:hover{background:var(--accent-2)}
+    .info{margin-top:12px;color:var(--muted);font-size:15px}
+    footer{background:#1c1b19;color:#d1d5db;padding:32px 0;margin-top:60px}
+    footer a{color:#f7f7f7}
+    footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
+    @media(max-width:800px){footer .cols{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="hizmetler.html">Toplu Hizmetler</a></li>
+          <li><a href="katalog.html">Katalog</a></li>
+          <li><a href="referanslar.html">Referanslar</a></li>
+          <li><a href="subeler.html">Şubeler</a></li>
+          <li><a href="teklif.html">Teklif Al</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Teklif Al</h1>
+    <p>Etkinliğinizin detaylarını paylaşın; sizin için en uygun menü ve servis modelini birlikte planlayalım. Aşağıdaki formu doldurduktan sonra ekibimiz en kısa sürede sizinle iletişime geçecektir.</p>
+
+    <form onsubmit="event.preventDefault(); alert('Teşekkürler! Teklif talebiniz başarıyla gönderildi. En kısa sürede size dönüş yapacağız.');">
+      <div class="form-row">
+        <input type="text" placeholder="Ad Soyad" required>
+        <input type="tel" placeholder="Telefon" required>
+      </div>
+      <div class="form-row">
+        <input type="email" placeholder="E-posta" required>
+        <select required>
+          <option value="">Etkinlik Türü Seçin</option>
+          <option>Açılış / Lansman</option>
+          <option>Kurumsal Yemek</option>
+          <option>Festival / Fuar</option>
+          <option>Okul / Kamu Organizasyonu</option>
+          <option>Diğer</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <input type="date" placeholder="Tarih">
+        <input type="number" placeholder="Tahmini Kişi Sayısı" min="20" step="10">
+      </div>
+      <textarea placeholder="Etkinliğiniz hakkında kısa not (menü tercihleri, servis biçimi, lokasyon vb.)"></textarea>
+      <button type="submit">Teklif Talebi Gönder</button>
+      <p class="info">* Bu form bilgilendirme amaçlıdır. Talebiniz ekibimiz tarafından incelendikten sonra size dönüş yapılır.</p>
+    </form>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="cols">
+        <div>
+          <h3>Ustabaşı Lezzet Ustası</h3>
+          <p>Kurumsal organizasyonlar ve toplu üretimde profesyonel yemek çözümleri.</p>
+        </div>
+        <div>
+          <strong>İletişim</strong>
+          <p>E-posta: info@ustabasilezzetustasi.com<br>Tel: 0XXX XXX XX XX</p>
+        </div>
+        <div>
+          <strong>Bağlantılar</strong>
+          <p><a href="index.html">Ana Sayfa</a><br>
+             <a href="hizmetler.html">Toplu Hizmetler</a><br>
+             <a href="katalog.html">Katalog</a><br>
+             <a href="referanslar.html">Referanslar</a><br>
+             <a href="subeler.html">Şubeler</a></p>
+        </div>
+      </div>
+      <p style="margin-top:16px;color:#a3a3a3">© <script>document.write(new Date().getFullYear())</script> Ustabaşı Lezzet Ustası. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+</body>
+</html>
