@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ustabaşı Lezzet Ustası | Kurumsal Organizasyon & Toplu Hizmetler</title>
-  <meta name="description" content="Ustabaşı Lezzet Ustası – Kurumsal organizasyonlar, toplu yemek ve yerinde üretim hizmetleri. Et döner, tavuk döner, kavurma ve kebap çeşitleriyle profesyonel çözümler." />
+  <meta name="description" content="Ustabaşı Lezzet Ustası – Kurumsal organizasyonlar, toplu yemek, yerinde üretim ve lojistik hizmetlerinde profesyonel çözümler.">
   <style>
     :root{
       --bg:#fbf7f2;
@@ -20,7 +20,7 @@
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
     .container{width:min(1180px,92%);margin:0 auto}
-    header{position:sticky;top:0;background:rgba(251,247,242,.85);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.05);z-index:50}
+    header{position:sticky;top:0;background:rgba(251,247,242,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.05);z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:12px}
     .brand .logo{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#fff;font-weight:800}
@@ -30,14 +30,15 @@
     .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;border:1px solid var(--accent);color:#fff;background:var(--accent);font-weight:700;transition:.2s;box-shadow:0 6px 14px rgba(182,130,43,.25)}
     .btn:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(182,130,43,.28)}
     .btn.alt{background:transparent;color:var(--accent)}
-    .hero{padding:64px 0}
-    .hero h1{font-size:clamp(28px,4.2vw,48px);font-weight:900;margin-bottom:14px}
-    .hero p{color:var(--muted);font-size:18px}
+    .hero{padding:80px 0;text-align:left}
+    .hero h1{font-size:clamp(28px,4.2vw,50px);font-weight:900;margin-bottom:14px}
+    .hero p{color:var(--muted);font-size:18px;max-width:700px}
     .hero .cta{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
-    section{padding:56px 0}
-    h2{font-size:clamp(22px,3vw,34px);color:var(--accent-2)}
-    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-    .card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:14px;padding:18px}
+    section{padding:60px 0}
+    h2{font-size:clamp(22px,3vw,34px);color:var(--accent-2);margin-bottom:18px;text-align:center}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+    .card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:14px;padding:20px;transition:.3s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    .card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.07)}
     footer{padding:32px 0;color:#fff;background:#1c1b19}
     footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
     footer a{color:#f7f7f7}
@@ -64,9 +65,10 @@
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <h1>İhtiyacınızı anlatın, menünüzü birlikte <span style="color:var(--accent)">kurgulayalım</span>.</h1>
+      <h1>İhtiyacınızı anlatın, menünüzü birlikte <span style="color:var(--accent)">tasarlayalım</span>.</h1>
       <p>Kurumsal etkinliklerden saha organizasyonlarına kadar, yemek üretimi, lojistik ve servis süreçlerini tek elden yönetiyoruz. 10.000+ günlük porsiyon kapasitemizle her ölçekte çözüm sunuyoruz.</p>
       <div class="cta">
         <a class="btn" href="teklif.html">Toplu Teklif İste</a>
@@ -75,39 +77,95 @@
     </div>
   </section>
 
+  <!-- İSTATİSTİKLER -->
+  <section style="background:#fff;padding:50px 0;border-top:1px solid rgba(0,0,0,.05);border-bottom:1px solid rgba(0,0,0,.05)">
+    <div class="container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;text-align:center">
+      <div>
+        <h2 style="color:#b6822b;font-size:42px;margin:0">+300</h2>
+        <p style="color:#6b7280;margin:6px 0 0;font-weight:600">Tamamlanan Organizasyon</p>
+      </div>
+      <div>
+        <h2 style="color:#b6822b;font-size:42px;margin:0">+10.000</h2>
+        <p style="color:#6b7280;margin:6px 0 0;font-weight:600">Günlük Porsiyon Kapasitesi</p>
+      </div>
+      <div>
+        <h2 style="color:#b6822b;font-size:42px;margin:0">+50</h2>
+        <p style="color:#6b7280;margin:6px 0 0;font-weight:600">Profesyonel Ekip Üyesi</p>
+      </div>
+      <div>
+        <h2 style="color:#b6822b;font-size:42px;margin:0">+20</h2>
+        <p style="color:#6b7280;margin:6px 0 0;font-weight:600">Yılın Tecrübesi</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:30px">
+      <a href="teklif.html" class="btn">Bizimle Çalışmaya Başlayın</a>
+    </div>
+  </section>
+
+  <!-- HİZMET ALANLARIMIZ -->
   <section>
     <div class="container">
-      <h2>Toplu Hizmetlerde Profesyonellik</h2>
-      <p>Şirket yemekleri, fabrika üretimi, açılış ve lansman organizasyonları, okul & kamu etkinlikleri ve daha fazlası için uçtan uca yemek çözümleri.</p>
+      <h2>Hizmet Alanlarımız</h2>
       <div class="grid-2">
         <div class="card">
-          <h3>Kurumsal Organizasyon</h3>
-          <p>Marka deneyimini güçlendiren şovlu servisler, sıcak tabak menüler, profesyonel saha ekipleri.</p>
+          <h3>Kurumsal Organizasyonlar</h3>
+          <p>Marka lansmanları, açılışlar, toplantılar, bayi buluşmaları ve kamu etkinliklerinde toplu servis çözümleri.</p>
         </div>
         <div class="card">
           <h3>Yerinde Üretim</h3>
-          <p>Hijyen standartlarına uygun, günlük taze üretim ve porsiyon analizleriyle sürdürülebilir hizmet.</p>
+          <p>Fabrika, okul, hastane gibi yerlerde günlük taze üretimle hijyenik ve hızlı yemek dağıtımı.</p>
+        </div>
+        <div class="card">
+          <h3>Toplu Yemek Dağıtımı</h3>
+          <p>Hazırlanan yemeklerin sıcak zincirle taşınması, sahada tam donanımlı ekiplerle servis edilmesi.</p>
+        </div>
+        <div class="card">
+          <h3>Etkinlik Catering</h3>
+          <p>Festival, fuar, mezuniyet gibi kalabalık etkinliklerde pratik ve kaliteli servis desteği.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
+  <!-- NEDEN BİZ -->
+  <section style="background:#fff">
     <div class="container">
-      <h2>Şubelerimiz</h2>
+      <h2>Neden Ustabaşı Lezzet Ustası?</h2>
       <div class="grid-2">
         <div class="card">
-          <h3>Merkez Şube – Gimat</h3>
-          <p>Adres: ……………………………………<br>Tel: 0XXX XXX XX XX</p>
+          <h3>✅  Kalite ve Hijyen Standartları</h3>
+          <p>Üretim süreçlerimiz ISO ve gıda güvenliği standartlarına uygun şekilde denetlenir.</p>
         </div>
         <div class="card">
-          <h3>Şube – İstanbul Yolu</h3>
-          <p>Adres: ……………………………………<br>Tel: 0XXX XXX XX XX</p>
+          <h3>👨‍🍳  Deneyimli Kadro</h3>
+          <p>Her biri alanında uzman şefler ve saha personelleriyle tam profesyonel hizmet sunuyoruz.</p>
+        </div>
+        <div class="card">
+          <h3>🚚  Hızlı Lojistik</h3>
+          <p>Soğuk ve sıcak zincir araçlarımızla, Ankara geneline hızlı ve güvenli teslimat yapıyoruz.</p>
+        </div>
+        <div class="card">
+          <h3>🤝  Kurumsal Güven</h3>
+          <p>Yüzlerce kamu kurumu ve özel markayla uzun vadeli iş birliklerimiz bulunuyor.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- FOTO GALERİ -->
+  <section>
+    <div class="container">
+      <h2>Organizasyonlarımızdan Kareler</h2>
+      <div class="grid-2">
+        <img src="https://images.unsplash.com/photo-1556911073-52527ac437f5?auto=format&fit=crop&w=900&q=60" alt="Etkinlik Servisi">
+        <img src="https://images.unsplash.com/photo-1565958011705-44e211dfb1a4?auto=format&fit=crop&w=900&q=60" alt="Yemek Servisi">
+        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=60" alt="Catering Sunumu">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=60" alt="Organizasyon Alanı">
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="cols">
