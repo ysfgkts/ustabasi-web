@@ -1,151 +1,158 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ustabaşı Lezzet Ustası | Toplu Yemek ve Organizasyon Hizmetleri</title>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ustabaşı Lezzet Ustası | Lezzetin Organizasyondaki Adı</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root {
-  --gold: #d4af37;
-  --bg: #faf8f5;
-  --text: #222;
-  --muted: #555;
+:root{
+  --gold:#c6a14b;
+  --light:#fffaf4;
+  --dark:#2b2b2b;
+  --text:#333;
 }
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  font-family: 'Manrope', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--light);
+  color:var(--text);
+  overflow-x:hidden;
   scroll-behavior:smooth;
 }
 
 /* HEADER */
-header {
+header{
   position:fixed;top:0;left:0;width:100%;
-  background:rgba(255,255,255,.8);
+  background:rgba(255,255,255,.85);
   backdrop-filter:blur(10px);
   display:flex;justify-content:space-between;align-items:center;
-  padding:14px 8%;z-index:1000;
-  box-shadow:0 2px 6px rgba(0,0,0,.05);
+  padding:16px 8%;z-index:999;
+  box-shadow:0 2px 10px rgba(0,0,0,.05);
 }
-header .logo {
-  font-weight:800;font-size:1.4rem;color:var(--gold);
-  letter-spacing:1px;
+header .logo{font-size:1.5rem;font-weight:800;color:var(--gold);}
+header nav ul{display:flex;list-style:none;gap:26px;}
+header nav a{
+  color:var(--text);text-decoration:none;font-weight:600;transition:.2s;
 }
-header nav ul {list-style:none;display:flex;gap:22px;}
-header nav a {
-  text-decoration:none;color:var(--text);font-weight:600;
-  transition:.2s;
-}
-header nav a:hover {color:var(--gold);}
-.menu-toggle{display:none;font-size:26px;color:var(--gold);cursor:pointer;}
+header nav a:hover{color:var(--gold);}
+.menu-toggle{display:none;font-size:28px;color:var(--gold);cursor:pointer;}
 @media(max-width:768px){
-  nav ul{display:none;flex-direction:column;position:absolute;top:65px;right:8%;background:#fff;padding:20px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.1);}
+  nav ul{display:none;flex-direction:column;position:absolute;top:70px;right:8%;background:#fff;padding:20px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,.1);}
   nav ul.active{display:flex;}
   .menu-toggle{display:block;}
 }
 
 /* HERO */
 .hero{
-  min-height:100vh;
-  background:url('https://images.unsplash.com/photo-1600891965059-1c92743f1407?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-  display:flex;align-items:center;justify-content:center;
-  position:relative;text-align:center;
-}
-.hero::after{
-  content:'';position:absolute;inset:0;background:rgba(255,255,255,.4);
-  backdrop-filter:blur(3px);
+  height:100vh;
+  background:linear-gradient(to bottom right,rgba(255,255,255,0.8),rgba(255,248,240,0.9)),url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1950&q=80') center/cover;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:0 8%;
+  position:relative;
+  animation:fadeIn 1.8s ease;
 }
 .hero-content{
-  position:relative;z-index:1;max-width:800px;padding:0 20px;
-  animation:fadeIn 2s ease both;
+  max-width:800px;
+  animation:slideUp 2s ease both;
 }
 .hero h1{
-  font-size:clamp(40px,6vw,80px);
-  color:#111;font-weight:900;line-height:1.1;
-  text-shadow:0 2px 8px rgba(255,255,255,.6);
+  font-size:clamp(40px,6vw,82px);
+  font-weight:800;
+  color:var(--dark);
+  margin-bottom:20px;
+  text-shadow:0 3px 10px rgba(255,255,255,.7);
 }
-.hero span{color:var(--gold);}
+.hero h1 span{
+  color:var(--gold);
+}
 .hero p{
-  color:#333;font-size:1.2rem;margin-top:18px;margin-bottom:35px;
+  font-size:1.2rem;
+  color:#444;
+  margin-bottom:40px;
+  line-height:1.6;
 }
 .btn{
-  background:var(--gold);color:#fff;padding:14px 30px;border:none;
-  border-radius:30px;font-weight:700;font-size:1rem;cursor:pointer;
-  box-shadow:0 8px 25px rgba(212,175,55,.4);
-  transition:.3s;
+  background:var(--gold);
+  color:#fff;
+  border:none;
+  padding:14px 32px;
+  border-radius:30px;
+  font-weight:600;
+  cursor:pointer;
+  margin:5px;
+  box-shadow:0 8px 20px rgba(198,161,75,.4);
+  transition:all .3s;
 }
-.btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(212,175,55,.6);}
-.btn.alt{
-  background:transparent;border:2px solid var(--gold);color:var(--gold);
-}
+.btn:hover{transform:translateY(-4px);box-shadow:0 12px 25px rgba(198,161,75,.6);}
+.btn.alt{background:transparent;border:2px solid var(--gold);color:var(--gold);}
 .btn.alt:hover{background:var(--gold);color:#fff;}
 
-/* ABOUT SECTION */
+/* ABOUT */
 .about{
-  padding:100px 8%;display:flex;flex-wrap:wrap;align-items:center;gap:60px;
+  display:flex;flex-wrap:wrap;align-items:center;gap:60px;
+  padding:100px 8%;
+  background:var(--light);
 }
 .about img{
-  width:480px;max-width:100%;border-radius:20px;
-  box-shadow:0 8px 30px rgba(0,0,0,.1);
+  width:500px;max-width:100%;border-radius:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
   animation:float 4s ease-in-out infinite alternate;
 }
 .about-text{flex:1;min-width:300px;}
 .about-text h2{
-  font-size:2.2rem;color:var(--gold);margin-bottom:20px;
+  font-size:2.2rem;color:var(--gold);margin-bottom:20px;font-weight:700;
 }
-.about-text p{line-height:1.7;color:var(--muted);}
+.about-text p{line-height:1.8;color:#555;}
 
 /* STATS */
 .stats{
   background:#fff;padding:80px 8%;text-align:center;
-  display:grid;gap:40px;box-shadow:0 -2px 10px rgba(0,0,0,.05);
 }
-.stats h2{font-size:2rem;color:var(--gold);}
+.stats h2{font-size:2rem;color:var(--gold);margin-bottom:50px;}
 .stat-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:30px;justify-items:center;
+  gap:40px;justify-items:center;
 }
 .stat{
-  background:var(--bg);
-  border-radius:20px;
-  padding:30px;width:200px;
-  box-shadow:0 4px 20px rgba(0,0,0,.08);
+  background:#fff;border-radius:16px;padding:40px 20px;width:200px;
+  box-shadow:0 6px 20px rgba(0,0,0,.06);
   transition:.4s;
 }
-.stat:hover{transform:translateY(-8px);}
-.stat .num{font-size:2rem;font-weight:800;color:var(--gold);}
-.stat .label{margin-top:6px;font-weight:600;color:#333;}
+.stat:hover{transform:translateY(-6px);box-shadow:0 10px 25px rgba(0,0,0,.1);}
+.stat .num{font-size:2.1rem;font-weight:800;color:var(--gold);}
+.stat .label{margin-top:8px;color:#555;font-weight:600;}
 
 /* SERVICES */
 .services{
-  padding:100px 8%;background:linear-gradient(180deg,#f8f6f3 0%,#ffffff 100%);
+  padding:100px 8%;
+  background:linear-gradient(180deg,#fffaf4 0%,#ffffff 100%);
 }
 .services h2{text-align:center;color:var(--gold);font-size:2rem;margin-bottom:60px;}
 .service-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:40px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;
 }
 .card{
-  background:#fff;border-radius:18px;padding:30px;box-shadow:0 5px 25px rgba(0,0,0,.08);
-  transition:.3s;transform:translateY(0);
+  background:#fff;border-radius:18px;padding:30px;
+  box-shadow:0 5px 25px rgba(0,0,0,.05);
+  transition:.3s;
 }
-.card:hover{transform:translateY(-8px);}
-.card h3{color:var(--gold);margin-bottom:12px;}
-.card p{color:var(--muted);line-height:1.6;}
+.card:hover{transform:translateY(-8px);box-shadow:0 8px 30px rgba(0,0,0,.1);}
+.card h3{color:var(--gold);margin-bottom:12px;font-weight:700;}
+.card p{color:#666;line-height:1.6;}
 
 /* FOOTER */
 footer{
-  background:#fff;padding:60px 8%;text-align:center;color:#555;font-size:.9rem;
-  border-top:1px solid rgba(0,0,0,.1);
+  background:#fff;padding:60px 8%;
+  text-align:center;color:#666;font-size:.9rem;
+  border-top:1px solid rgba(0,0,0,.05);
 }
-footer a{color:var(--gold);text-decoration:none;}
+footer a{color:var(--gold);}
 footer p{margin-top:8px;}
 
 /* ANIMATIONS */
-@keyframes fadeIn{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 @keyframes float{from{transform:translateY(0)}to{transform:translateY(-15px)}}
 </style>
 </head>
@@ -168,21 +175,21 @@ footer p{margin-top:8px;}
 <section class="hero">
   <div class="hero-content">
     <h1>Lezzetin <span>Ustası</span> Her Organizasyonda Yanınızda</h1>
-    <p>Kurumsal yemeklerden özel davetlere kadar, her detayda kalite, hijyen ve mükemmel sunum.</p>
-    <div class="btns">
-      <button class="btn">📋 Teklif Al</button>
-      <button class="btn alt">Hizmetleri Gör</button>
-    </div>
+    <p>Ustabaşı Lezzet Ustası olarak toplu yemek, catering ve organizasyon hizmetlerinde 
+    kaliteyi, hijyeni ve mükemmel sunumu bir arada sunuyoruz.</p>
+    <button class="btn">📋 Teklif Al</button>
+    <button class="btn alt">Hizmetleri Gör</button>
   </div>
 </section>
 
 <section class="about">
-  <img src="https://images.unsplash.com/photo-1600891965151-c1c9f9bb9a45?auto=format&fit=crop&w=1000&q=80" alt="Ustabaşı Lezzet Ustası" />
+  <img src="https://images.unsplash.com/photo-1556910103-1b8a6c8c8f0d?auto=format&fit=crop&w=900&q=80" alt="Ustabaşı Lezzet Ustası" />
   <div class="about-text">
-    <h2>Lezzetle Gelen Güven</h2>
-    <p>Ustabaşı Lezzet Ustası olarak yıllardır binlerce kişiye profesyonel toplu yemek hizmeti sunuyoruz. 
-    Organizasyonlar, şirket yemekleri ve özel davetlerde her zaman kaliteyi, güveni ve hijyeni ön planda tutuyoruz. 
-    Geniş ekibimiz ve modern mutfağımızla, her porsiyonu aynı titizlikle hazırlıyoruz.</p>
+    <h2>Her Lokmada Deneyim</h2>
+    <p>Yıllardır büyük organizasyonlarda, kurumsal etkinliklerde ve özel davetlerde 
+    hizmet veriyoruz. Uzman ekibimizle, en taze malzemeleri kullanarak hazırladığımız 
+    menülerimizle misafirlerinize unutulmaz bir deneyim sunuyoruz.  
+    Her porsiyonda kalite, her organizasyonda profesyonellik bizim için standarttır.</p>
   </div>
 </section>
 
@@ -191,7 +198,7 @@ footer p{margin-top:8px;}
   <div class="stat-grid">
     <div class="stat"><div class="num">+300</div><div class="label">Organizasyon</div></div>
     <div class="stat"><div class="num">+10.000</div><div class="label">Günlük Porsiyon</div></div>
-    <div class="stat"><div class="num">+50</div><div class="label">Uzman Ekip</div></div>
+    <div class="stat"><div class="num">+50</div><div class="label">Ekip Üyesi</div></div>
     <div class="stat"><div class="num">+20</div><div class="label">Yıl Tecrübe</div></div>
   </div>
 </section>
@@ -201,19 +208,19 @@ footer p{margin-top:8px;}
   <div class="service-grid">
     <div class="card">
       <h3>Kurumsal Organizasyonlar</h3>
-      <p>Şirket toplantıları, açılışlar ve bayi organizasyonları için profesyonel toplu yemek hizmetleri.</p>
+      <p>Şirket toplantıları, açılışlar ve davetler için profesyonel catering çözümleri.</p>
     </div>
     <div class="card">
       <h3>Yerinde Üretim</h3>
-      <p>Fabrika, okul ve hastanelerde hijyenik koşullarda günlük sıcak yemek üretimi.</p>
+      <p>Fabrika, okul ve hastanelerde günlük sıcak yemek üretimi ve servis hizmeti.</p>
     </div>
     <div class="card">
-      <h3>Taşımalı Yemek Servisi</h3>
-      <p>Sıcak zincirle taşınan, her porsiyonu özenle hazırlanmış menülerle zamanında teslimat.</p>
+      <h3>Toplu Dağıtım</h3>
+      <p>Sıcak zincirle taşınan, özenle hazırlanmış menülerle zamanında teslimat.</p>
     </div>
     <div class="card">
       <h3>Özel Davetler</h3>
-      <p>Düğün, nişan, kutlama gibi özel günlerde zengin menüler ve şık sunumlar.</p>
+      <p>Düğün, nişan, sünnet ve özel günlerde zengin menülerle kaliteli hizmet.</p>
     </div>
   </div>
 </section>
@@ -224,9 +231,7 @@ footer p{margin-top:8px;}
 </footer>
 
 <script>
-function toggleMenu(){
-  document.getElementById("navMenu").classList.toggle("active");
-}
+function toggleMenu(){document.getElementById("navMenu").classList.toggle("active");}
 </script>
 </body>
 </html>
