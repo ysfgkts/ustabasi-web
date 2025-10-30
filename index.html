@@ -26,9 +26,9 @@
     .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;box-shadow:0 6px 14px rgba(182,130,43,.25);transition:.2s}
     .btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(182,130,43,.3)}
     .btn.alt{background:transparent;color:var(--accent);border:2px solid var(--accent)}
-    .hero{padding:90px 0;text-align:left}
-    .hero h1{font-size:clamp(28px,4vw,52px);font-weight:900;margin-bottom:18px}
-    .hero p{color:var(--muted);font-size:18px;max-width:700px}
+    .hero{padding:80px 0;text-align:left}
+    .hero h1{font-size:clamp(26px,4vw,48px);font-weight:900;margin-bottom:18px}
+    .hero p{color:var(--muted);font-size:17px;max-width:700px}
     .hero .cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
     section{padding:70px 0}
     h2{text-align:center;font-size:clamp(22px,3vw,34px);color:var(--accent-2);margin-bottom:20px}
@@ -41,20 +41,29 @@
     @media(max-width:900px){footer .cols{grid-template-columns:1fr}}
 
     /* 🎯 İSTATİSTİK DAİRELERİ */
-    .stats{background:#fff;padding:60px 0;position:relative}
-    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;justify-items:center;text-align:center}
+    .stats{background:#fff;padding:60px 0}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:30px;justify-items:center;text-align:center}
     .stat-circle{
-      width:140px;height:140px;
-      border-radius:50%;
+      width:130px;height:130px;border-radius:50%;
       background:radial-gradient(circle at 30% 30%, #fff 0%, #f7f2e9 60%);
       border:5px solid var(--accent);
       display:flex;flex-direction:column;align-items:center;justify-content:center;
       box-shadow:0 8px 18px rgba(182,130,43,.25);
       transition:.3s;
     }
-    .stat-circle:hover{transform:scale(1.05);box-shadow:0 12px 25px rgba(182,130,43,.35)}
-    .stat-number{color:var(--accent-2);font-size:32px;font-weight:900}
-    .stat-label{color:var(--muted);font-weight:600;font-size:14px;margin-top:4px}
+    .stat-circle:hover{transform:scale(1.05)}
+    .stat-number{color:var(--accent-2);font-size:28px;font-weight:900}
+    .stat-label{color:var(--muted);font-weight:600;font-size:13px;margin-top:4px}
+
+    /* 🔹 Mobil Menü */
+    .menu-toggle{display:none;font-size:28px;color:var(--accent);cursor:pointer}
+    @media(max-width:768px){
+      nav ul{display:none;flex-direction:column;position:absolute;top:70px;right:10px;background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.1);padding:12px 0;width:180px;text-align:center;z-index:100}
+      nav ul.active{display:flex}
+      .menu-toggle{display:block}
+      .btn{display:none}
+      .hero{text-align:center;padding:60px 0}
+    }
   </style>
 </head>
 <body>
@@ -65,7 +74,9 @@
         <div class="title">Ustabaşı Lezzet Ustası</div>
       </div>
       <nav>
-        <ul>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="navMenu">
+          <li><a href="index.html">Ana Sayfa</a></li>
           <li><a href="hizmetler.html">Toplu Hizmetler</a></li>
           <li><a href="katalog.html">Katalog</a></li>
           <li><a href="referanslar.html">Referanslar</a></li>
@@ -93,22 +104,10 @@
   <section class="stats">
     <div class="container">
       <div class="stats-grid">
-        <div class="stat-circle">
-          <div class="stat-number">+300</div>
-          <div class="stat-label">Tamamlanan Organizasyon</div>
-        </div>
-        <div class="stat-circle">
-          <div class="stat-number">+10.000</div>
-          <div class="stat-label">Günlük Porsiyon</div>
-        </div>
-        <div class="stat-circle">
-          <div class="stat-number">+50</div>
-          <div class="stat-label">Profesyonel Ekip</div>
-        </div>
-        <div class="stat-circle">
-          <div class="stat-number">+20</div>
-          <div class="stat-label">Yıl Tecrübe</div>
-        </div>
+        <div class="stat-circle"><div class="stat-number">+300</div><div class="stat-label">Tamamlanan Organizasyon</div></div>
+        <div class="stat-circle"><div class="stat-number">+10.000</div><div class="stat-label">Günlük Porsiyon</div></div>
+        <div class="stat-circle"><div class="stat-number">+50</div><div class="stat-label">Profesyonel Ekip</div></div>
+        <div class="stat-circle"><div class="stat-number">+20</div><div class="stat-label">Yıl Tecrübe</div></div>
       </div>
       <div style="text-align:center;margin-top:40px">
         <a href="teklif.html" class="btn">Bizimle Çalışmaya Başlayın</a>
@@ -121,22 +120,10 @@
     <div class="container">
       <h2>Hizmet Alanlarımız</h2>
       <div class="grid-2">
-        <div class="card">
-          <h3>Kurumsal Organizasyonlar</h3>
-          <p>Marka lansmanları, açılışlar, toplantılar, bayi buluşmaları ve kamu etkinliklerinde toplu servis çözümleri.</p>
-        </div>
-        <div class="card">
-          <h3>Yerinde Üretim</h3>
-          <p>Fabrika, okul, hastane gibi yerlerde günlük taze üretimle hijyenik ve hızlı yemek dağıtımı.</p>
-        </div>
-        <div class="card">
-          <h3>Toplu Yemek Dağıtımı</h3>
-          <p>Hazırlanan yemeklerin sıcak zincirle taşınması, sahada tam donanımlı ekiplerle servis edilmesi.</p>
-        </div>
-        <div class="card">
-          <h3>Etkinlik Catering</h3>
-          <p>Festival, fuar, mezuniyet gibi kalabalık etkinliklerde pratik ve kaliteli servis desteği.</p>
-        </div>
+        <div class="card"><h3>Kurumsal Organizasyonlar</h3><p>Marka lansmanları, açılışlar, toplantılar, bayi buluşmaları ve kamu etkinliklerinde toplu servis çözümleri.</p></div>
+        <div class="card"><h3>Yerinde Üretim</h3><p>Fabrika, okul, hastane gibi yerlerde günlük taze üretimle hijyenik ve hızlı yemek dağıtımı.</p></div>
+        <div class="card"><h3>Toplu Yemek Dağıtımı</h3><p>Hazırlanan yemeklerin sıcak zincirle taşınması, sahada tam donanımlı ekiplerle servis edilmesi.</p></div>
+        <div class="card"><h3>Etkinlik Catering</h3><p>Festival, fuar, mezuniyet gibi kalabalık etkinliklerde pratik ve kaliteli servis desteği.</p></div>
       </div>
     </div>
   </section>
@@ -155,15 +142,17 @@
         </div>
         <div>
           <strong>Bağlantılar</strong>
-          <p><a href="hizmetler.html">Toplu Hizmetler</a><br>
-             <a href="katalog.html">Katalog</a><br>
-             <a href="referanslar.html">Referanslar</a><br>
-             <a href="subeler.html">Şubeler</a><br>
-             <a href="teklif.html">Teklif Al</a></p>
+          <p><a href="hizmetler.html">Toplu Hizmetler</a><br><a href="katalog.html">Katalog</a><br><a href="referanslar.html">Referanslar</a><br><a href="subeler.html">Şubeler</a><br><a href="teklif.html">Teklif Al</a></p>
         </div>
       </div>
       <p style="margin-top:16px;color:#a3a3a3;text-align:center">© <script>document.write(new Date().getFullYear())</script> Ustabaşı Lezzet Ustası. Tüm hakları saklıdır.</p>
     </div>
   </footer>
+
+  <script>
+    function toggleMenu(){
+      document.getElementById("navMenu").classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
