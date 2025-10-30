@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teklif Al | Ustabaşı Lezzet Ustası</title>
-  <meta name="description" content="Etkinliğinizin detaylarını paylaşın; Ustabaşı Lezzet Ustası olarak size özel toplu yemek ve organizasyon teklifimizi hazırlayalım.">
+  <meta name="description" content="Ustabaşı Lezzet Ustası — Kurumsal organizasyon ve toplu yemek hizmetleri için teklif alın.">
   <style>
     :root{
       --bg:#fbf7f2;
@@ -14,32 +14,59 @@
       --muted:#6b7280;
       --card:#ffffff;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans";background:var(--bg);color:var(--ink);line-height:1.6}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans";background:var(--bg);color:var(--ink);line-height:1.6}
     a{text-decoration:none;color:inherit}
     .container{width:min(1180px,92%);margin:0 auto}
+    
     header{position:sticky;top:0;background:rgba(251,247,242,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.05);padding:12px 0;z-index:50}
-    nav ul{display:flex;list-style:none;gap:18px;justify-content:flex-end;margin:0;padding:0;font-weight:600}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .logo{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#fff;font-weight:800}
+    nav ul{display:flex;gap:18px;list-style:none;font-weight:600}
     nav a:hover{color:var(--accent)}
-    h1{font-size:clamp(28px,4vw,44px);margin-top:48px;color:var(--accent-2)}
-    form{display:grid;gap:14px;margin-top:32px}
-    input, select, textarea{padding:12px 14px;border-radius:12px;border:1px solid rgba(0,0,0,.12);background:#fff;font:inherit;width:100%}
-    textarea{min-height:120px;resize:vertical}
-    .form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
-    button{padding:14px 20px;background:var(--accent);color:#fff;font-weight:700;border:none;border-radius:999px;cursor:pointer;transition:.2s}
-    button:hover{background:var(--accent-2)}
-    .info{margin-top:12px;color:var(--muted);font-size:15px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;box-shadow:0 6px 14px rgba(182,130,43,.25);transition:.2s}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(182,130,43,.3)}
+    
+    h1{text-align:center;color:var(--accent-2);font-size:clamp(28px,4vw,44px);margin-top:48px}
+    p.desc{text-align:center;color:var(--muted);max-width:700px;margin:10px auto 40px}
+    
+    form{background:#fff;border-radius:16px;padding:32px;box-shadow:0 3px 10px rgba(0,0,0,.05);max-width:600px;margin:0 auto}
+    label{display:block;font-weight:600;margin:14px 0 6px;color:var(--accent-2)}
+    input,textarea,select{width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;font-size:15px}
+    textarea{resize:vertical;min-height:100px}
+    button[type=submit]{margin-top:20px;width:100%;padding:14px;background:var(--accent);color:#fff;font-size:16px;border:none;border-radius:999px;font-weight:700;cursor:pointer;transition:.2s}
+    button[type=submit]:hover{background:var(--accent-2)}
+    
+    .whatsapp-section{text-align:center;margin-top:40px}
+    .whatsapp-btn{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;font-weight:700;padding:14px 24px;border-radius:999px;box-shadow:0 4px 10px rgba(37,211,102,.3);transition:.2s}
+    .whatsapp-btn:hover{transform:translateY(-2px);background:#1ebe5d}
+    
     footer{background:#1c1b19;color:#d1d5db;padding:32px 0;margin-top:60px}
     footer a{color:#f7f7f7}
     footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
-    @media(max-width:800px){footer .cols{grid-template-columns:1fr}}
+    @media(max-width:900px){footer .cols{grid-template-columns:1fr}}
+    
+    /* Mobil menü */
+    .menu-toggle{display:none;font-size:28px;color:var(--accent);cursor:pointer}
+    @media(max-width:768px){
+      nav ul{display:none;flex-direction:column;position:absolute;top:70px;right:10px;background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.1);padding:12px 0;width:180px;text-align:center;z-index:100}
+      nav ul.active{display:flex}
+      .menu-toggle{display:block}
+      .btn{display:none}
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">UL</div>
+        <div class="title">Ustabaşı Lezzet Ustası</div>
+      </div>
       <nav>
-        <ul>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="navMenu">
           <li><a href="index.html">Ana Sayfa</a></li>
           <li><a href="hizmetler.html">Toplu Hizmetler</a></li>
           <li><a href="katalog.html">Katalog</a></li>
@@ -48,37 +75,44 @@
           <li><a href="teklif.html">Teklif Al</a></li>
         </ul>
       </nav>
+      <a class="btn" href="teklif.html">Hızlı Teklif</a>
     </div>
   </header>
 
   <main class="container">
     <h1>Teklif Al</h1>
-    <p>Etkinliğinizin detaylarını paylaşın; sizin için en uygun menü ve servis modelini birlikte planlayalım. Aşağıdaki formu doldurduktan sonra ekibimiz en kısa sürede sizinle iletişime geçecektir.</p>
+    <p class="desc">Etkinliğiniz veya toplu organizasyonunuz için bize ulaşın. İhtiyacınıza en uygun menüyü birlikte planlayalım.</p>
 
-    <form onsubmit="event.preventDefault(); alert('Teşekkürler! Teklif talebiniz başarıyla gönderildi. En kısa sürede size dönüş yapacağız.');">
-      <div class="form-row">
-        <input type="text" placeholder="Ad Soyad" required>
-        <input type="tel" placeholder="Telefon" required>
-      </div>
-      <div class="form-row">
-        <input type="email" placeholder="E-posta" required>
-        <select required>
-          <option value="">Etkinlik Türü Seçin</option>
-          <option>Açılış / Lansman</option>
-          <option>Kurumsal Yemek</option>
-          <option>Festival / Fuar</option>
-          <option>Okul / Kamu Organizasyonu</option>
-          <option>Diğer</option>
-        </select>
-      </div>
-      <div class="form-row">
-        <input type="date" placeholder="Tarih">
-        <input type="number" placeholder="Tahmini Kişi Sayısı" min="20" step="10">
-      </div>
-      <textarea placeholder="Etkinliğiniz hakkında kısa not (menü tercihleri, servis biçimi, lokasyon vb.)"></textarea>
-      <button type="submit">Teklif Talebi Gönder</button>
-      <p class="info">* Bu form bilgilendirme amaçlıdır. Talebiniz ekibimiz tarafından incelendikten sonra size dönüş yapılır.</p>
+    <form onsubmit="sendForm(event)">
+      <label>Ad Soyad</label>
+      <input type="text" id="name" placeholder="Adınızı girin" required>
+
+      <label>Telefon</label>
+      <input type="tel" id="phone" placeholder="05XX XXX XX XX" required>
+
+      <label>Etkinlik Türü</label>
+      <select id="event">
+        <option>Kurumsal Organizasyon</option>
+        <option>Düğün / Nişan / Kına</option>
+        <option>Fabrika / Şantiye / Günlük Yemek</option>
+        <option>Diğer</option>
+      </select>
+
+      <label>Kişi Sayısı</label>
+      <input type="number" id="count" placeholder="Örn: 250" required>
+
+      <label>Not</label>
+      <textarea id="note" placeholder="Etkinlik tarihi, menü tercihleri, özel istekler..."></textarea>
+
+      <button type="submit">Teklif Gönder</button>
     </form>
+
+    <div class="whatsapp-section">
+      <p style="margin-top:30px;color:var(--muted)">Ya da doğrudan WhatsApp üzerinden hızlı teklif alın:</p>
+      <a class="whatsapp-btn" href="https://wa.me/905XXXXXXXXX?text=Merhaba%20Ustabaşı%20Lezzet%20Ustası%2C%20organizasyonum%20için%20teklif%20almak%20istiyorum." target="_blank">
+        💬 WhatsApp’tan Teklif Al
+      </a>
+    </div>
   </main>
 
   <footer>
@@ -94,15 +128,30 @@
         </div>
         <div>
           <strong>Bağlantılar</strong>
-          <p><a href="index.html">Ana Sayfa</a><br>
-             <a href="hizmetler.html">Toplu Hizmetler</a><br>
-             <a href="katalog.html">Katalog</a><br>
-             <a href="referanslar.html">Referanslar</a><br>
-             <a href="subeler.html">Şubeler</a></p>
+          <p><a href="index.html">Ana Sayfa</a><br><a href="hizmetler.html">Toplu Hizmetler</a><br><a href="katalog.html">Katalog</a><br><a href="referanslar.html">Referanslar</a><br><a href="subeler.html">Şubeler</a></p>
         </div>
       </div>
-      <p style="margin-top:16px;color:#a3a3a3">© <script>document.write(new Date().getFullYear())</script> Ustabaşı Lezzet Ustası. Tüm hakları saklıdır.</p>
+      <p style="margin-top:16px;color:#a3a3a3;text-align:center">© <script>document.write(new Date().getFullYear())</script> Ustabaşı Lezzet Ustası. Tüm hakları saklıdır.</p>
     </div>
   </footer>
+
+  <script>
+    function toggleMenu(){
+      document.getElementById("navMenu").classList.toggle("active");
+    }
+
+    function sendForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const eventType = document.getElementById('event').value;
+      const count = document.getElementById('count').value;
+      const note = document.getElementById('note').value;
+
+      const message = `📋 Yeni Teklif Talebi%0A👤 Ad Soyad: ${name}%0A📞 Telefon: ${phone}%0A🎯 Etkinlik: ${eventType}%0A👥 Kişi Sayısı: ${count}%0A📝 Not: ${note}`;
+      const whatsappURL = `https://wa.me/905XXXXXXXXX?text=${message}`;
+      window.open(whatsappURL, '_blank');
+    }
+  </script>
 </body>
 </html>
