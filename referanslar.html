@@ -1,65 +1,15 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <link rel="stylesheet" href="css/style.css">
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Referanslar | Ustabaşı Lezzet Ustası</title>
-  <meta name="description" content="Ustabaşı Lezzet Ustası — 300'den fazla kurumsal organizasyon, 10.000'den fazla memnun misafir. İşte bizimle çalışan markalardan bazıları.">
-  <style>
-    :root{
-      --bg:#fbf7f2;
-      --ink:#1f2937;
-      --accent:#b6822b;
-      --accent-2:#7a5520;
-      --muted:#6b7280;
-      --card:#ffffff;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans";background:var(--bg);color:var(--ink);line-height:1.6}
-    a{text-decoration:none;color:inherit}
-    .container{width:min(1180px,92%);margin:0 auto}
-    
-    header{position:sticky;top:0;background:rgba(251,247,242,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.05);padding:12px 0;z-index:50}
-    .nav{display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand .logo{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#fff;font-weight:800}
-    nav ul{display:flex;gap:18px;list-style:none;font-weight:600}
-    nav a:hover{color:var(--accent)}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;box-shadow:0 6px 14px rgba(182,130,43,.25);transition:.2s}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(182,130,43,.3)}
-    
-    h1{font-size:clamp(28px,4vw,44px);margin-top:48px;color:var(--accent-2);text-align:center}
-    h2{color:var(--accent);text-align:center;margin-bottom:20px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:40px}
-    .card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:24px;box-shadow:0 3px 10px rgba(0,0,0,.04);transition:.3s;text-align:center}
-    .card:hover{transform:translateY(-3px)}
-    .card img{max-width:100px;margin-bottom:12px;filter:grayscale(30%)}
-    .quote{font-style:italic;color:var(--muted);margin-top:10px}
-    
-    footer{background:#1c1b19;color:#d1d5db;padding:32px 0;margin-top:60px}
-    footer a{color:#f7f7f7}
-    footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
-    @media(max-width:900px){footer .cols{grid-template-columns:1fr}}
-    
-    /* Mobil menü */
-    .menu-toggle{display:none;font-size:28px;color:var(--accent);cursor:pointer}
-    @media(max-width:768px){
-      nav ul{display:none;flex-direction:column;position:absolute;top:70px;right:10px;background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.1);padding:12px 0;width:180px;text-align:center;z-index:100}
-      nav ul.active{display:flex}
-      .menu-toggle{display:block}
-      .btn{display:none}
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
     <div class="container nav">
-      <div class="brand">
-        <div class="logo">UL</div>
-        <div class="title">Ustabaşı Lezzet Ustası</div>
-      </div>
+      <div class="brand"><div class="logo">UL</div><div class="title">Ustabaşı Lezzet Ustası</div></div>
       <nav>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul id="navMenu">
@@ -77,70 +27,26 @@
 
   <main class="container">
     <h1>Referanslarımız</h1>
-    <p style="text-align:center;max-width:720px;margin:12px auto 40px">
-      300'den fazla kurumsal organizasyon ve 10.000’den fazla misafir memnuniyetiyle sektörün güvenilir iş ortaklarından biriyiz.
-      Aşağıda birlikte çalıştığımız markalardan bazılarını görebilirsiniz.
-    </p>
+    <p class="desc">Yıllardır birçok kurum, belediye ve özel kuruluşla gerçekleştirdiğimiz iş ortaklıklarından bazıları:</p>
 
     <div class="grid">
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Ülker_logo.png" alt="Ülker">
-        <h3>Ülker</h3>
-        <p class="quote">“Fabrika organizasyonlarımızda Ustabaşı ekibinin koordinasyonu ve lezzeti beklentimizin çok üzerindeydi.”</p>
-      </div>
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Aselsan_logo.svg" alt="Aselsan">
-        <h3>ASELSAN</h3>
-        <p class="quote">“Kurumsal lansmanlarımızda tercih ettiğimiz nadir firmalardan biri. Profesyonel sunum ve servis.”</p>
-      </div>
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Roketsan_logo.svg" alt="Roketsan">
-        <h3>Roketsan</h3>
-        <p class="quote">“Toplu yemek dağıtımındaki hız, hijyen ve ekip uyumu takdire değer.”</p>
-      </div>
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Ankara_Büyükşehir_Belediyesi_logo.png" alt="ABB">
-        <h3>Ankara Büyükşehir Belediyesi</h3>
-        <p class="quote">“Festival ve halk etkinliklerinde binlerce kişiye sorunsuz servis sağlayan profesyonel kadro.”</p>
-      </div>
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Turkcell_logo.svg" alt="Turkcell">
-        <h3>Turkcell</h3>
-        <p class="quote">“Kurumsal açılışta mükemmel sunum, zamanında servis ve üstün koordinasyon.”</p>
-      </div>
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Anadolu_Efes_logo.svg" alt="Anadolu Efes">
-        <h3>Anadolu Efes</h3>
-        <p class="quote">“Etkinlik boyunca tüm servis akışı kusursuzdu. Teşekkürler Ustabaşı!”</p>
-      </div>
+      <div class="card"><h3>Ülker</h3><p>Bayi lansman organizasyonu – 850 kişilik özel catering servisi.</p></div>
+      <div class="card"><h3>Ankara Büyükşehir Belediyesi</h3><p>Kültür ve müzik festivali için 10.000 kişilik yemek organizasyonu.</p></div>
+      <div class="card"><h3>Roketsan</h3><p>Kurumsal yemek hizmeti – haftalık menü planlaması ve saha servisi.</p></div>
+      <div class="card"><h3>İçişleri Bakanlığı</h3><p>Personel yemeği organizasyonu – 2500 kişilik sıcak servis.</p></div>
+      <div class="card"><h3>LC Waikiki</h3><p>Personel motivasyon etkinliği – 400 kişilik açık büfe servis.</p></div>
     </div>
   </main>
 
   <footer>
-    <div class="container">
-      <div class="cols">
-        <div>
-          <h3>Ustabaşı Lezzet Ustası</h3>
-          <p>Kurumsal organizasyonlar ve toplu üretimde profesyonel yemek çözümleri.</p>
-        </div>
-        <div>
-          <strong>İletişim</strong>
-          <p>E-posta: info@ustabasilezzetustasi.com<br>Tel: 0XXX XXX XX XX</p>
-        </div>
-        <div>
-          <strong>Bağlantılar</strong>
-          <p><a href="index.html">Ana Sayfa</a><br><a href="hizmetler.html">Toplu Hizmetler</a><br><a href="katalog.html">Katalog</a><br><a href="subeler.html">Şubeler</a><br><a href="teklif.html">Teklif Al</a></p>
-        </div>
-      </div>
-      <p style="margin-top:16px;color:#a3a3a3;text-align:center">© <script>document.write(new Date().getFullYear())</script> Ustabaşı Lezzet Ustası. Tüm hakları saklıdır.</p>
+    <div class="container cols">
+      <div><h3>Ustabaşı Lezzet Ustası</h3><p>Kurumsal organizasyonlar ve toplu üretimde profesyonel yemek çözümleri.</p></div>
+      <div><strong>İletişim</strong><p>E-posta: info@ustabasilezzetustasi.com<br>Tel: 0XXX XXX XX XX</p></div>
+      <div><strong>Bağlantılar</strong><p><a href="index.html">Ana Sayfa</a><br><a href="hizmetler.html">Toplu Hizmetler</a><br><a href="katalog.html">Katalog</a><br><a href="subeler.html">Şubeler</a><br><a href="teklif.html">Teklif Al</a></p></div>
     </div>
+    <p style="text-align:center;color:#aaa;margin-top:20px;">© <script>document.write(new Date().getFullYear())</script> Ustabaşı Lezzet Ustası</p>
   </footer>
 
-  <script>
-    function toggleMenu(){
-      document.getElementById("navMenu").classList.toggle("active");
-    }
-  </script>
+  <script>function toggleMenu(){document.getElementById("navMenu").classList.toggle("active");}</script>
 </body>
 </html>
-
