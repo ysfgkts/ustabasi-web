@@ -33,7 +33,7 @@ header nav a{color:#eee;text-decoration:none;font-weight:600;transition:.25s}
 header nav a:hover{color:var(--gold)}
 .menu-toggle{display:none;font-size:28px;color:var(--gold);cursor:pointer}
 @media(max-width:768px){
-  nav ul{display:none;flex-direction:column;position:absolute;top:70px;right:8%;background:#222;padding:20px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.6)}
+  nav ul{display:none;flex-direction:column;position:absolute;top:70px;right:8%;:#222;padding:20px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.6)}
   nav ul.active{display:flex}
   .menu-toggle{display:block}
 }
@@ -42,6 +42,9 @@ header nav a:hover{color:var(--gold)}
 .hero{
   height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;
   background:#1b1511 center/cover no-repeat; /* JS bu alanı gerçek görselle değiştirecek */
+  background-size: 85%;   /* % değerini burada değiştirerek küçültüp büyüt */
+background-position: center top; /* fotoğrafı yukarı, ortaya veya aşağı hizala */
+
 }
 .hero::after{
   content:'';position:absolute;inset:0;
@@ -196,3 +199,4 @@ function toggleMenu(){document.getElementById('navMenu').classList.toggle('activ
 </script>
 </body>
 </html>
+
